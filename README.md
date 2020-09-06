@@ -45,3 +45,16 @@ After NGINX is started, you can set your live streaming program to stream to `rt
 Once you start streaming, your stream should begin on the streaming service.
 
 If you go offline during the stream, the video you specific in `config.sh` will begin to loop until you go back online or NGINX is shut down.
+
+## Handy Commands
+* `nano /usr/local/share/nginx/streamRIP/config.sh`
+
+   Edit the streamRIP config.
+
+* `sudo nano /etc/nginx/.conf`
+
+   Edit the nginx config.
+
+* `scp [source file] root@144.202.101.107:/usr/local/share/nginx/streamRIP/.`
+
+   Copy a video file to the streamRIP directory.
