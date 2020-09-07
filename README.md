@@ -47,14 +47,72 @@ Once you start streaming, your stream should begin on the streaming service.
 If you go offline during the stream, the video you specific in `config.sh` will begin to loop until you go back online or NGINX is shut down.
 
 ## Handy Commands
-* `nano /usr/local/share/nginx/streamRIP/config.sh`
+
+* `ssh root@144.202.101.107`
+
+   Remote SSH into the server
+
+* `nano /usr/share/nginx/streamRIP/config.sh`
 
    Edit the streamRIP config.
 
-* `sudo nano /etc/nginx/.conf`
+* `sudo nano /usr/local/nginx/conf/nginx.conf`
 
    Edit the nginx config.
 
-* `scp [source file] root@144.202.101.107:/usr/local/share/nginx/streamRIP/.`
+* `scp [video file] root@144.202.101.107:/usr/share/nginx/streamRIP/.`
 
    Copy a video file to the streamRIP directory.
+
+* `cp /usr/share/nginx/streamRIP/streamrip.conf /etc/nginx/nginx.conf`
+
+   Replace the nginx configuration file with the streamRIP configuration file.
+
+* `systemctl status nginx.service`
+
+   Test the status of the nginx service.
+
+* `sudo service nginx restart`
+
+   Restart nginx.
+
+* `sudo nginx -t`
+
+   Test the nginx config file.
+
+* `http://nginx.org/en/download.html`
+
+   The latest version of nginx.
+
+* `https://www.vultr.com/docs/setup-nginx-rtmp-on-ubuntu-14-04`
+
+   Vultr setup of RTMP.
+
+* `./configure --with-http_ssl_module --add-module=../nginx-rtmp-module-master --without-http_gzip_module --with-cc-opt="-Wimplicit-fallthrough=0"`
+
+   Configuring nginx before compiling to include the RTMP module. This version of the command does not throw the gzip error.
+
+* `rtmp://live-sjc05.twitch.tv/app/`
+
+   Closest twitch server (to home, but probably Vultr as well)
+
+* `sudo apt install gcc`
+
+   Install C compiler.
+
+* `wget http://nginx.org/download/nginx-1.19.2.tar.gz`
+
+   Download the latest version of nginx (as of writing).
+
+* don't forget to sudo apt-get update
+* `sudo apt install make`
+
+   Install make
+
+* `sudo add-apt-repository ppa:kirillshkrogalev/ffmpeg-next`
+
+   Add the ffmpeg repo?
+
+* `tail -f /var/log/nginx/error.log`
+
+   Read nginx logs.
