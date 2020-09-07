@@ -64,7 +64,7 @@ If you go offline during the stream, the video you specific in `config.sh` will 
 
    Copy a video file to the streamRIP directory.
 
-* `cp /usr/share/nginx/streamRIP/streamrip.conf /etc/nginx/nginx.conf`
+* `cp /usr/share/nginx/streamRIP/streamrip.conf /usr/local/nginx/conf/nginx.conf`
 
    Replace the nginx configuration file with the streamRIP configuration file.
 
