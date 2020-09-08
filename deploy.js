@@ -15,6 +15,7 @@ const buildProcesses = {
             
             return engine.parseAndRender(template, {
                 destinationPath: process.env.DESTINATION_PATH,
+                offlineFile: process.env.OFFLINE_VIDEO_FILE,
                 streamKey: process.env.STREAM_KEY,
                 twitchServer: process.env.TWITCH_SERVER,
                 twitchStreamKey: process.env.TWITCH_STREAM_KEY
@@ -70,8 +71,11 @@ async function deploy() {
     })
     
     try {
+        const exists = await client.exists(`${process.env.DESTINATION_PATH}`)
+        if (!exists) await client.mkdir(`${process.env.DESTINATION_PATH}`)
         await client.uploadDir(`${buildDirectory}`, `${process.env.DESTINATION_PATH}`)
         await client.uploadFile(`${buildDirectory}/streamrip.conf`, `${process.env.NGINX_CONF}`)
+        //await client.uploadFile(`./static/${process.env.OFFLINE_VIDEO_FILE}`, `${process.env.DESTINATION_PATH}`) this doesn't work
     }
     catch(e) {
         console.log(e.stack)

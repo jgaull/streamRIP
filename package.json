@@ -1,6 +1,6 @@
 {
   "name": "bikecurious-streamrip",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A slim livestreaming server for streamers operating on the cheap.",
   "main": "index.js",
   "scripts": {

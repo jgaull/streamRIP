@@ -4,3 +4,5 @@ offfi.mp4
 node_modules/
 build/
 .env
+.env.dev
+*.mp4
