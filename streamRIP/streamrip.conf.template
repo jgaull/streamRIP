@@ -11,15 +11,15 @@ rtmp {
 		ping_timeout 5s;
 		chunk_size 4096;
 		
-		exec_static /usr/share/nginx/streamRIP/nginx_start.sh;
+		exec_static {{destinationPath}}/nginx_start.sh;
 
 		application live {
 			live on;
 			idle_streams off;
 			drop_idle_publisher 5s;
 
-			exec_publish /usr/share/nginx/streamRIP/publish_start.sh;
-			exec_publish_done /usr/share/nginx/streamRIP/publish_stop.sh;
+			exec_publish {{destinationPath}}/publish_start.sh;
+			exec_publish_done {{destinationPath}}/publish_stop.sh;
 		}
 	}
 }

@@ -1,0 +1,29 @@
+{
+  "name": "bikecurious-streamrip",
+  "version": "0.0.1",
+  "description": "A slim livestreaming server for streamers operating on the cheap.",
+  "main": "index.js",
+  "scripts": {
+    "setup": "node install.js",
+    "deploy": "node deploy.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgaull/streamRIP.git"
+  },
+  "author": "Jonathan Gaull",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgaull/streamRIP/issues"
+  },
+  "homepage": "https://github.com/jgaull/streamRIP#readme",
+  "dependencies": {
+    "child-process-promise": "^2.2.1",
+    "cp-file": "^9.0.0",
+    "dotenv": "^8.2.0",
+    "liquid": "^5.0.0",
+    "mz": "^2.7.0",
+    "node-scp": "0.0.3"
+  }
+}

@@ -1,2 +1,6 @@
 
 .DS_Store
+offfi.mp4
+node_modules/
+build/
+.env
